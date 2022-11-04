@@ -1,9 +1,4 @@
-<!-- DATE PICKER JS -->
-<script src="https://cdn.jsdelivr.net/npm/pikaday/pikaday.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.2/moment.min.js"></script>
-<!-- Set up the date picker -->
-<script>
-	var FRAUD_EMAIL_TOKENS = [
+var FRAUD_EMAIL_TOKENS = [
 		"fabown",
 		"raheemsad",
 		"rahkart",
@@ -496,45 +491,3 @@
 			event: "booking_result_visit",
 		});
 	}
-</script>
-
-<!-- Set the available duration options -->
-<script>
-	var durationElement = document.getElementById("Duration");
-
-	// Remove all but the first option, which should be something like "Choose..."
-	durationElement.options.length = 1;
-
-	var validOptions = [1, 2, 3, 4, 5, 6, 7, 8];
-
-	// Remove 1 hour option for New Heights
-	if (
-		window.location.pathname.includes("major-r-owens-health-wellness-community")
-	) {
-		validOptions = [2, 3, 4, 5, 6, 7, 8];
-	}
-
-	validOptions.forEach((option) => {
-		durationElement.add(
-			new Option(`${option} hour${option > 1 ? "s" : ""}`, option)
-		);
-	});
-</script>
-<!-- End duration option code -->
-
-<!--Tooltip Scripts & Settings-->
-<script src="https://unpkg.com/popper.js@1"></script>
-<script src="https://unpkg.com/tippy.js@4"></script>
-<script>
-	tippy(".tooltip", {
-		placement: "right",
-		animation: "shift-toward-subtle",
-		duration: 300,
-		arrow: "small",
-		delay: [0, 50],
-		arrowType: "sharp",
-		theme: "light-border",
-		maxWidth: 220,
-		interactive: true,
-	});
-</script>
