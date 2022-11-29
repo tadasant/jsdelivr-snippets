@@ -6,6 +6,7 @@ var FRAUD_EMAIL_TOKENS = [
 	"rayzercut99",
 	"raydemon1090",
 	"bcbmgmt",
+	"shadowswg695"
 ];
 var FRAUD_NAMES = [
 	["Raheem", "Joyner"],
