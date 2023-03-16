@@ -6,9 +6,10 @@ $(document).ready(function () {
 	);
 	const preWriteSelector = document.querySelector("#pre-written-select");
 	const outputTextDiv = document.getElementById("click-to-rewrite-output");
-	const clickToRewriteButton = document.getElementById(
-		"click-to-rewrite-button"
-	);
+	// jquery get elements with attribute named "data-name" and value "click-to-rewrite-button"
+	const clickToRewriteButtons = $("[data-name='click-to-rewrite-button']");
+
+	document.getElementById("click-to-rewrite-button");
 	const clickToRewriteLoadingSpinner = document.getElementById(
 		"click-to-rewrite-loading-spinner"
 	);
@@ -73,5 +74,7 @@ $(document).ready(function () {
 			});
 	}
 
-	clickToRewriteButton.addEventListener("click", processRewrite);
+	for (let i = 0; i < clickToRewriteButtons.length; i++) {
+		clickToRewriteButtons[i].addEventListener("click", processRewrite);
+	}
 });
