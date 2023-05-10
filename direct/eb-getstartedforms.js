@@ -5,7 +5,7 @@ $(document).ready(function () {
 	const TYPEFORM_URL = "https://form.typeform.com/to/y3WNQWib";
 
 	function submitWebflowGetStartedForm(formName, phoneValue) {
-		const WEBFLOW_SITE_ID = "639fbb2b3272142ce9a9c1dd";
+		// const WEBFLOW_SITE_ID = "639fbb2b3272142ce9a9c1dd";
 
 		const formData = {
 			name: formName,
@@ -13,13 +13,14 @@ $(document).ready(function () {
 			test: false,
 			"fields[phone-number]": phoneValue,
 			dolphin: false,
+			medium: formName.toLowerCase().includes("sms") ? "SMS" : "WhatsApp",
 		};
 
 		const formDataString = Object.keys(formData)
 			.map((key) => `${key}=${encodeURIComponent(formData[key])}`)
 			.join("&");
 
-		return fetch(`https://webflow.com/api/v1/form/${WEBFLOW_SITE_ID}`, {
+		return fetch(`https://bend.englishbrain.app/api/receiveSignup`, {
 			method: "POST",
 			body: new URLSearchParams(formDataString),
 		});
@@ -94,8 +95,7 @@ $(document).ready(function () {
 		if (
 			settings.data &&
 			settings.url &&
-			settings.data.includes("Get+Started") &&
-			settings.url.includes("/form/")
+			settings.data.includes("Get+Started")
 		) {
 			const data = new URLSearchParams(settings.data);
 			const phoneNumber = data.get("fields[phone-number]");
