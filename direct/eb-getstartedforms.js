@@ -47,7 +47,7 @@ $(document).ready(function () {
 				const countryValue = iniPhoneInput.getSelectedCountryData().iso2;
 				if (countryValue === "us") {
 					// only support SMS for US
-					submitWebflowGetStartedForm("Get Started SMS", phoneValue).then(
+					submitWebflowGetStartedForm("Get Started SMS - v2", phoneValue).then(
 						() => {
 							const resultUrl = `${TYPEFORM_URL}#phone_number=${phoneValue}`;
 							// redirect to Typeform. If new-tab doesn't work, give the request 2s to go in flight
